@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 1 element(s) from project '数据结构实验一'&#13;&#10;- Original project: '数据结构实验一'&#13;&#10;- Original element: 'ONE.TWO.java'" description="Delete element" element1="/src&lt;ONE{TWO.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1474016855698" subPackages="false" version="1.0"/>
+<refactoring accessors="true" comment="Delete 1 element(s) from project '数据结构实验一'&#13;&#10;- Original project: '数据结构实验一'&#13;&#10;- Original element: '数据结构实验一/src/SEVERN'" description="Delete element" element1="/src&lt;SEVERN" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1474028537999" subPackages="false" version="1.0"/>
+<refactoring accessors="true" comment="Delete 1 element(s) from project '数据结构实验一'&#13;&#10;- Original project: '数据结构实验一'&#13;&#10;- Original element: '数据结构实验一/src/SEVEV'" description="Delete element" element1="/src&lt;SEVEV" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1474028556716" subPackages="false" version="1.0"/>
+</session>

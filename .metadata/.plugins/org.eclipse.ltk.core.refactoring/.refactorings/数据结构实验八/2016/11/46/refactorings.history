@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 1 element(s) from project '数据结构实验八'&#13;&#10;- Original project: '数据结构实验八'&#13;&#10;- Original element: 'conversion.java'" description="Delete element" element1="conversion.java" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1478612574009" subPackages="false" version="1.0"/>
+<refactoring accessors="true" comment="Delete 1 element(s) from project '数据结构实验八'&#13;&#10;- Original project: '数据结构实验八'&#13;&#10;- Original element: 'conversion.java'" description="Delete element" element1="conversion.java" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1478612607929" subPackages="false" version="1.0"/>
+<refactoring accessors="true" comment="Delete 1 element(s) from project '数据结构实验八'&#13;&#10;- Original project: '数据结构实验八'&#13;&#10;- Original element: '辗转相除法'" description="Delete element" element1="辗转相除法" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1478612612066" subPackages="false" version="1.0"/>
+</session>

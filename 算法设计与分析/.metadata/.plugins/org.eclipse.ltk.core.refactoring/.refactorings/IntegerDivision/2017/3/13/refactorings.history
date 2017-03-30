@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<session version="1.0">
+<refactoring comment="Rename type 'IntegerDivision.IntegerDivision' to 'integerDivision'&#13;&#10;- Original project: 'IntegerDivision'&#13;&#10;- Original element: 'IntegerDivision.IntegerDivision'&#13;&#10;- Renamed element: 'IntegerDivision.integerDivision'&#13;&#10;- Update references to refactored element&#13;&#10;- Update textual occurrences in comments and strings" description="Rename type 'IntegerDivision'" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;IntegerDivision{IntegerDivision.java[IntegerDivision" matchStrategy="1" name="integerDivision" qualified="false" references="true" similarDeclarations="false" stamp="1490523245500" textual="false" version="1.0"/>
+</session>

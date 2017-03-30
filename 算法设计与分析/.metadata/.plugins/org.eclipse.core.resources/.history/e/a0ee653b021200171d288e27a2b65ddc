@@ -1,0 +1,13 @@
+package Perm;
+
+public class Perm {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
