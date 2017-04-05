@@ -14,7 +14,7 @@ public class MergeSort {//合并排序
 			 System.out.print(a[i] + " ");
 		System.out.println();
 		System.out.print("递归排序后为:");
-//		mergeSort(a, 0, 8);//有错误
+//		mergeSort(a, 0, 8);
 		System.out.println();
 		System.out.print("非递归排序后为:");
 		mergeSort1(a, a.length);
