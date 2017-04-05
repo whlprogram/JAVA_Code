@@ -14,10 +14,13 @@ public class MergeSort {//合并排序
 			 System.out.print(a[i] + " ");
 		System.out.println();
 		System.out.print("递归排序后为:");
-//		mergeSort(a, 0, 8);//有错误
+		mergeSort(a, 0, 9);//有错误
+		for(int i=0; i<=9; i++){
+			System.out.print(a[i] + " ");
+		}
 		System.out.println();
 		System.out.print("非递归排序后为:");
-		mergeSort1(a, a.length);
+//		mergeSort1(a, a.length);
 	}
 	//合并排序 递归算法
 	public static void mergeSort(int a[], int left, int right){
@@ -26,11 +29,7 @@ public class MergeSort {//合并排序
 			mergeSort(a, left, i);
 			mergeSort(a, i+1, right);
 			Merge(a, b, left, i, right);//合并到数组b
-//			Copy(a, b, left, right);//复制回数组a
-			for(int i1=left; i1<=right; i1++){
-				a[i1] = b[i1];
-				System.out.print(a[i1] + " ");
-			}						 
+			Copy(a, b, left, right);//复制回数组a					 
 		}
 	}
 	//合并排序 非递归算法

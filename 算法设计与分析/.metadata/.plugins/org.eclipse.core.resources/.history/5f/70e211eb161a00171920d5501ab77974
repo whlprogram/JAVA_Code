@@ -1,0 +1,51 @@
+package QuickSort;
+
+import com.sun.org.apache.bcel.internal.generic.SWAP;
+
+public class QuickSort {//快速排序
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a[] = {1, 5, 6, 3, 9, 8, 7, 2, 4, 0};
+		System.out.print("快速排序前:");
+		for(int i=0; i<=9; i++){
+			System.out.print(a[i] + " ");
+		}
+		System.out.println();
+		QuickSort1(a, 0, 9);
+		System.out.print("快速排序后:");
+		for(int i=0; i<=9; i++){
+			System.out.print(a[i] + " ");
+		}
+	}
+	public static void QuickSort1(int a[], int p, int r){
+		if(p < r){
+			int q = Partition(a, p, r);
+			QuickSort1(a, p, q-1);
+			QuickSort1(a, q+1, r);
+		}
+	}
+	public static int Partition(int a[], int p, int r){
+		int i = p, j = r+1;
+		int x = a[p];
+		//将<x的元素交换到左边区域
+		//将>x的元素交换到右边区域
+		while(true){
+			while(a[++i]<x && i<r);
+			while(a[--j] > x);
+			if(i >= j)
+				break;
+			//Swap(a[i], a[j]);
+			int temp = a[i];
+			a[i] = a[j];
+			a[j] = temp;
+		}
+		a[p] = a[i];
+		a[j] = x;
+		return j;
+	}
+
+}
