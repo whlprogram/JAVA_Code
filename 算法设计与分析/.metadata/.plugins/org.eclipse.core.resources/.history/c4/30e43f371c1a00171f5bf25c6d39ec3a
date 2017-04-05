@@ -60,7 +60,7 @@ public class QuickSort {//快速排序
 		
 		Random rand = new Random();
 		int i = rand.nextInt(r-p+1) + p;//在p~r之间随机生成一个数
-		//a[i]与a[p]交换位置
+		
 		int temp = a[i];
 		a[i] = a[p];
 		a[p] = temp;
