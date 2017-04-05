@@ -37,15 +37,8 @@ public class QuickSort {//快速排序
 		}
 	}
 	public static int RandomizedPartition(int a[], int p, int r){
-//      random.nextInt(max)表示生成[0,max]之间的随机数
-//		生成0－2之间的随机数，包括2
-//		Random rand = new Random();
-//		int randNum = rand.nextInt(3);
-//		生成5－26之间的随机数，包括26
-//		int randNum = rand.nextInt(22)+5;
-		
 		Random rand = new Random();
-		int i = rand.nextInt(r-p+1) + p;//在p~r之间随机生成一个数
+		int i = rand.nextInt(r-p+1) + p;
 		
 		int temp = a[i];
 		a[i] = a[p];

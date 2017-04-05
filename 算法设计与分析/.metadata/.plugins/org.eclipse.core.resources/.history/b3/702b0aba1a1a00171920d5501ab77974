@@ -16,7 +16,7 @@ public class QuickSort {//快速排序
 			System.out.print(a[i] + " ");
 		}
 		System.out.println();
-		RandomizedQuickSort(a, 0, 9);
+		QuickSort1(a, 0, 9);
 		System.out.print("快速排序后:");
 		for(int i=0; i<=9; i++){
 			System.out.print(a[i] + " ");
@@ -37,22 +37,18 @@ public class QuickSort {//快速排序
 		}
 	}
 	public static int RandomizedPartition(int a[], int p, int r){
-//      random.nextInt(max)表示生成[0,max]之间的随机数
-//		生成0－2之间的随机数，包括2
-//		Random rand = new Random();
-//		int randNum = rand.nextInt(3);
-//		生成5－26之间的随机数，包括26
-//		int randNum = rand.nextInt(22)+5;
-		
-		Random rand = new Random();
-		int i = rand.nextInt(r-p+1) + p;//在p~r之间随机生成一个数
+		int i = Random(p, r);
 		
 		int temp = a[i];
 		a[i] = a[p];
 		a[p] = temp;
 		
 		return Partition(a, p, r);
-	}	
+	}
+	private static int Random(int p, int r) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	public static int Partition(int a[], int p, int r){
 		int i = p, j = r+1;
 		int x = a[p];
