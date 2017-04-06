@@ -1,6 +1,8 @@
 package MergeSort;
 
-public class MergeSort {//合并排序   27和41行很重要！
+import com.sun.swing.internal.plaf.basic.resources.basic;
+
+public class MergeSort {//合并排序
 
 	/**
 	 * @param args
@@ -14,13 +16,13 @@ public class MergeSort {//合并排序   27和41行很重要！
 			 System.out.print(a[i] + " ");
 		System.out.println();
 		System.out.print("递归排序后为:");
-		mergeSort(a, 0, 9);
+		mergeSort(a, 0, 9);//有错误
 		for(int i=0; i<=9; i++){
 			System.out.print(a[i] + " ");
 		}
 		System.out.println();
 		System.out.print("非递归排序后为:");
-		mergeSort1(a, a.length);
+//		mergeSort1(a, a.length);
 	}
 	//合并排序 递归算法
 	public static void mergeSort(int a[], int left, int right){

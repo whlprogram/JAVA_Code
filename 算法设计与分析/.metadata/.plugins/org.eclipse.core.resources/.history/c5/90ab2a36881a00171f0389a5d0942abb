@@ -1,6 +1,8 @@
 package MergeSort;
 
-public class MergeSort {//合并排序   27和41行很重要！
+import com.sun.swing.internal.plaf.basic.resources.basic;
+
+public class MergeSort {//合并排序
 
 	/**
 	 * @param args
@@ -14,26 +16,26 @@ public class MergeSort {//合并排序   27和41行很重要！
 			 System.out.print(a[i] + " ");
 		System.out.println();
 		System.out.print("递归排序后为:");
-		mergeSort(a, 0, 9);
-		for(int i=0; i<=9; i++){
-			System.out.print(a[i] + " ");
-		}
+		mergeSort(a, 0, 9);//有错误
+//		for(int i=0; i<=9; i++){
+//			System.out.print(a[i] + " ");
+//		}
 		System.out.println();
 		System.out.print("非递归排序后为:");
-		mergeSort1(a, a.length);
+//		mergeSort1(a, a.length);
 	}
 	//合并排序 递归算法
 	public static void mergeSort(int a[], int left, int right){
-		b = new int[right+1];//很重要！！！！！初始化数组b 
 		if(left < right){//至少有两个元素
 			int i = (left+right)/2;//取中点
 			mergeSort(a, left, i);
 			mergeSort(a, i+1, right);
 			Merge(a, b, left, i, right);//合并到数组b
-			Copy(a, b, left, right);//复制回数组a	 等同于下面三行代码
-//			for(int i1=left; i1<=right; i1++){
-//				a[i1] = b[i1];
-//			}
+			//Copy(a, b, left, right);//复制回数组a	
+			for(int i1=0; i<b.length; i1++){
+				//a[i1] = b[i1];
+				System.out.print(b[i1] + " ");
+			}
 		}
 	}
 	//合并排序 非递归算法

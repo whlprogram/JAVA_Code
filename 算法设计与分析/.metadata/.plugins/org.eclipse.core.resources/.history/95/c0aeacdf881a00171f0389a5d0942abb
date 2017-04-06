@@ -1,6 +1,8 @@
 package MergeSort;
 
-public class MergeSort {//合并排序   27和41行很重要！
+//import com.sun.swing.internal.plaf.basic.resources.basic;
+
+public class MergeSort {//合并排序
 
 	/**
 	 * @param args

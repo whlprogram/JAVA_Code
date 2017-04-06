@@ -1,6 +1,6 @@
 package MergeSort;
 
-public class MergeSort {//合并排序   27和41行很重要！
+public class MergeSort {//合并排序
 
 	/**
 	 * @param args
