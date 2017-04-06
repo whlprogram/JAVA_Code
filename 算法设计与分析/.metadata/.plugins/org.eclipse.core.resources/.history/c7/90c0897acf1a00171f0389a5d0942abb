@@ -1,0 +1,13 @@
+package Select;
+
+public class Select {//线性时间查找 按要求查找数组中元素  类似于RandomizedSelect 但最坏情况用时O(n)
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

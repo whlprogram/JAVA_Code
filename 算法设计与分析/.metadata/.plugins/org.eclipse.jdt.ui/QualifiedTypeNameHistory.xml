@@ -2,4 +2,8 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.SWAP"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="com.sun.swing.internal.plaf.basic.resources.basic"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.compiler.Template"/>
+<fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

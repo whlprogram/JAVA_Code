@@ -30,7 +30,8 @@ public class MergeSort {//合并排序   27和41行很重要！
 			mergeSort(a, left, i);
 			mergeSort(a, i+1, right);
 			Merge(a, b, left, i, right);//合并到数组b
-			Copy(a, b, left, right);//复制回数组a	 等同于下面三行代码
+			
+			Copy(a, b, left, right);//将数组b复制给数组a	 等同于下面三行代码
 //			for(int i1=left; i1<=right; i1++){
 //				a[i1] = b[i1];
 //			}
@@ -67,14 +68,12 @@ public class MergeSort {//合并排序   27和41行很重要！
 			for(int j=i; j<=n-1; j++)
 				y[j] = x[j];		
 	}
+	//合并c[left:middle]和c[middle+1:right]到d[left:right]
 	public static void Merge(int c[], int d[], int left, int middle, int right){
-		//合并c[left:middle]和c[middle+1:right]到d[left:right]
 		int i = left, j = middle+1, k = left;
 		while( (i<=middle) && (j<=right) ){//两个子序列非空时取小者输出到d[k]上
 			if(c[i] <= c[j]){
-				d[k] = c[i];
-				k++;
-				i++;
+				d[k++] = c[i++];
 			}
 			else
 				d[k++] = c[j++];

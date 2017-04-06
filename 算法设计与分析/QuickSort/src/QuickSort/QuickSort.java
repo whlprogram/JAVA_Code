@@ -34,7 +34,8 @@ public class QuickSort {//快速排序
 		System.out.print("随机快速排序后:");
 		for(int i=0; i<=9; i++){
 			System.out.print(b[i] + " ");
-		}
+		}    
+		
 	}
 	public static void QuickSort1(int a[], int p, int r){
 		if(p < r){
@@ -52,6 +53,7 @@ public class QuickSort {//快速排序
 	}
 	public static int RandomizedPartition(int a[], int p, int r){
 //      random.nextInt(max)表示生成[0,max]之间的随机数
+//		举例：
 //		生成0－2之间的随机数，包括2
 //		Random rand = new Random();
 //		int randNum = rand.nextInt(3);
