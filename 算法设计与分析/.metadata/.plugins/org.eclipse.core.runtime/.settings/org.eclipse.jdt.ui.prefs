@@ -1,4 +1,4 @@
-#Thu Apr 06 21:47:35 CST 2017
+#Fri Apr 28 23:55:45 CST 2017
 sourceHoverBackgroundColor=255,255,225
 content_assist_autoactivation_delay=100
 spelling_locale_initialized=true
@@ -13,6 +13,7 @@ org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UT
 org.eclipse.jdt.ui.javadoclocations.migrated=true
 content_assist_autoactivation_triggers_java=.abc
 proposalOrderMigrated=true
+Refactoring.savealleditors=true
 org.eclipse.jdt.ui.formatterprofiles.version=11
 useQuickDiffPrefPage=true
 org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
