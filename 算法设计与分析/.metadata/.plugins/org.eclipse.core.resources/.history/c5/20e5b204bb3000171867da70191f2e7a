@@ -9,25 +9,24 @@ public class matrixChain {//矩阵连乘 最优解 P47
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//A1=30*35 A2=35*15 A3=15*5 A4=5*10 A5=10*20 A6=20*25 
-//		int p[] = {30, 35, 15, 5, 10, 20, 25};
-//		int n = 6;
-		int p[] = {20, 25, 10, 5, 15, 20};
-		int n = 5;
+		int p[] = {30, 35, 15, 5, 10, 20, 25};
+		//int p[] = {20, 25, 10, 5, 15, 20};
+		int n = 6;
+		//int n = 5;
 		int m[][] = new int[n+1][n+1];
 		int s[][] = new int[n+1][n+1];
 		
 		int s1[][] = new int[n+1][n+1];
 		
-		int m2[][] = new int[n+1][n+1];
+		int m1[][] = new int[n+1][n+1];
 		int s2[][] = new int[n+1][n+1];
-		
 		MatrixChain(p, n, m, s);//非递归
 		t(1, n, s);
 		System.out.println();
 		RecurMatrixChain(1, n, p, s1);//自底向上 递归 动态规划
 		t(1, n, s1);
 		System.out.println();
-		MemoizedMatrixChain(n, m2, s2, p);//自顶向下 递归 动态规划
+		MemoizedMatrixChain(n, m1, s2, p);//自顶向下 递归 动态规划
 		t(1, n, s2);
 //		System.out.println("输出最优解数组");
 //		for(int i=1; i<m.length; i++){
@@ -54,7 +53,7 @@ public class matrixChain {//矩阵连乘 最优解 P47
 		if (i == j)
 			System.out.print("A" + i);
 		else if (i + 1 == j)
-			System.out.print("(A" + i + "*" + "A" + j + ")");
+			System.out.print("A" + i + "*" + "A" + j );
 		else {	
 			System.out.print("(");
 			t(i, s[i][j], s);

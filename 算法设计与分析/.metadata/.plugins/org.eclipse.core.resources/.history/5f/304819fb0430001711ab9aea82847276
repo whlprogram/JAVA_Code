@@ -1,5 +1,6 @@
 package matrixChain;
 
+
 public class matrixChain {//矩阵连乘 最优解 P47
 
 	/**
@@ -7,26 +8,49 @@ public class matrixChain {//矩阵连乘 最优解 P47
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String A = "A1A2A3A4A5A6";
 		//A1=30*35 A2=35*15 A3=15*5 A4=5*10 A5=10*20 A6=20*25 
-		int p[] = {30, 35, 15, 5, 10, 20, 25};
-		int n = 6;
+		//int p[] = {30, 35, 15, 5, 10, 20, 25};
+		int p[] = {20, 25, 10, 5, 15, 20};
+		//int n = 6;
+		int n = 5;
 		int m[][] = new int[n+1][n+1];
 		int s[][] = new int[n+1][n+1];
 		MatrixChain(p, n, m, s);
 		System.out.println("输出最优解数组");
-		for(int i=0; i<m.length; i++){
-			for(int j=0; j<m.length; j++)
-				System.out.print(m[i][j] + " ");
+		for(int i=1; i<m.length; i++){
+			for(int j=1; j<m[0].length; j++)
+				System.out.print(m[i][j] + "   ");
 			System.out.println();
 		}
 		System.out.println("输出最优断开位置数组");
-		for(int i=0; i<s.length; i++){
-			for(int j=0; j<s.length; j++)
-				System.out.print(s[i][j]);
+		for(int i=1; i<s.length; i++){
+			for(int j=1; j<s[0].length; j++)
+				System.out.print(s[i][j]+" ");
 			System.out.println();
 		}
+		Traceback(1, 5, s);
 	}
+	//输出计算最优计算次序,逗号分离
+	public static void Traceback(int i, int j, int s[][]) {
+		if(i==j) return;
+		Traceback(i, s[i][j], s);
+		Traceback(s[i][j]+1, j, s);
+		System.out.println("(A" + i + "," + s[i][j] + ")*(A" + (s[i][j]+1) + "," + j + ")");
+	}
+
+	public static void t(int i, int j, int s[][]) {
+		if (i == j)
+			System.out.print("A" + i);
+		else if (i + 1 == j)
+			System.out.print("(A" + i + "A" + j + ")");
+		else {	
+			System.out.print("(");
+			t(i, s[i][j], s);
+			t(s[i][j]+1, j, s);
+			System.out.print(")");
+		}
+	}
+
 	//一维数组P存储n个矩阵的行列值, 二维数组m存储最优值, 二维数组s记录最优断开位置
 	public static void MatrixChain(int p[], int n, int m[][], int s[][]){
 		for(int i=1; i<=n; i++)//单个矩阵

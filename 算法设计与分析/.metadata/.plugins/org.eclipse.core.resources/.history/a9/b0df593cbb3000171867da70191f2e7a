@@ -9,10 +9,10 @@ public class matrixChain {//矩阵连乘 最优解 P47
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//A1=30*35 A2=35*15 A3=15*5 A4=5*10 A5=10*20 A6=20*25 
-//		int p[] = {30, 35, 15, 5, 10, 20, 25};
-//		int n = 6;
-		int p[] = {20, 25, 10, 5, 15, 20};
-		int n = 5;
+		int p[] = {30, 35, 15, 5, 10, 20, 25};
+		//int p[] = {20, 25, 10, 5, 15, 20};
+		int n = 6;
+		//int n = 5;
 		int m[][] = new int[n+1][n+1];
 		int s[][] = new int[n+1][n+1];
 		
