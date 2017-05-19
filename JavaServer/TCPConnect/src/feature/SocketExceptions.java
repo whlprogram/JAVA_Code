@@ -1,0 +1,11 @@
+package feature;
+
+/**
+ * Created by Yang on 16/11/15.
+ */
+public class SocketExceptions extends Exception {
+
+    SocketExceptions(String msg) {
+        super(msg);
+    }
+}

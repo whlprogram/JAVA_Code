@@ -1,0 +1,76 @@
+package feature;
+
+import protocol.DataProtocol;
+
+public class DataSplit {
+
+	private int Id;
+    private String EnvHumidity;//环境湿度
+    private String EnvTemperature;//环境温度
+    private String LightVal1;//光照值1
+    private String LightVal2;//光照值2
+    private String LightVal3;//光照值3
+    private String WaterLevel;//水位
+    private String Electricity;//电量
+    private String SoilHumidity;//土壤湿度
+    
+    public int getId() {return Id;}
+    public void setId(int Id) {this.Id = Id;}
+    
+    public String getEnvHumidity() {return EnvHumidity;}
+    public void setEnvHumidity(String EnvHumidity) {this.EnvHumidity = EnvHumidity;}
+    
+    public String getEnvTemperature() {return EnvTemperature;}
+    public void setEnvTemperature(String EnvTemperature) {this.EnvTemperature = EnvTemperature;}
+    
+    public String getLightVal1() {return LightVal1;}
+    public void setLightVal1(String LightVal1) {this.LightVal1 = LightVal1;}
+    
+    public String getLightVal2() {return LightVal2;}
+    public void setLightVal2(String LightVal2) {this.LightVal2 = LightVal2;}
+    
+    public String getLightVal3() {return LightVal3;}
+    public void setLightVal3(String LightVal3) {this.LightVal3 = LightVal3;}
+    
+    public String getWaterLevel() {return WaterLevel;}
+    public void setWaterLevel(String WaterLevel) {this.WaterLevel = WaterLevel;}
+    
+    public String getElectricity() {return Electricity;}
+    public void setElectricity(String Electricity) {this.Electricity = Electricity;}
+    
+    public String getSoilHumidity() {return SoilHumidity;}
+    public void setSoilHumidity(String SoilHumidity) {this.SoilHumidity = SoilHumidity;}
+    
+    
+    public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+
+	}
+     
+	public void Split(DataProtocol reciveMsg) {
+    	String[] strArray={"","","","","","","",""};
+        if (reciveMsg != null) {
+            String Data = reciveMsg.getData();
+            int count = 0;
+            for(int i=0; i<Data.length(); i++){
+            	if(count == 8)
+            		break;
+            	String temp = "";
+            	if(Data.charAt(i) != ',')
+            		temp += Data.charAt(i);
+            	else{
+            		strArray[count] = temp;
+            		count++;
+            	}
+            }
+            EnvHumidity = strArray[0];
+            EnvTemperature = strArray[1];
+            LightVal1 = strArray[2];
+            LightVal2 = strArray[3];
+            LightVal3 = strArray[4];
+            WaterLevel = strArray[5];
+            Electricity = strArray[6];
+            SoilHumidity = strArray[7];
+        }
+    }
+}

@@ -1,0 +1,92 @@
+package feature;
+
+import java.sql.Connection;  
+import java.sql.DriverManager;  
+import java.sql.ResultSet;  
+import java.sql.SQLException;  
+import java.sql.Statement;  
+import java.util.ArrayList;  
+import java.util.List;  
+
+public class JdbcAction {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		// 创建静态全局变量    
+	    static Connection conn;    
+	    
+	    static Statement st;    
+	    /* 获取数据库连接的函数*/    
+	    public static Connection getConnection() {    
+	        Connection con = null;  //创建用于连接数据库的Connection对象    
+	        try {    
+	            Class.forName("com.mysql.jdbc.Driver");// 加载Mysql数据驱动    
+	                
+	            con = DriverManager.getConnection(    
+	                    "jdbc:mysql://localhost:3306/user", "root", "root");// 创建数据连接    
+	                
+	        } catch (Exception e) {    
+	            System.out.println("数据库连接失败" + e.getMessage());    
+	        }    
+	        return con; //返回所建立的数据库连接    
+	    }    
+	      
+	    public static void insert(userInformation v){  
+	        conn = getConnection(); // 首先要获取连接，即连接到数据库    
+	        try {    
+	            String sql = "INSERT INTO users(Id, name, password)"    
+	                    + " VALUES ('"+v.getId()+"','"+v.getname()+"','"+v.getpassword() +"')";  // 插入数据的sql语句    
+	            System.out.println("sql="+sql);  
+	            st = (Statement) conn.createStatement();    // 创建用于执行静态sql语句的Statement对象    
+	                
+	            int count = st.executeUpdate(sql);  // 执行插入操作的sql语句，并返回插入数据的个数    
+	                
+	            System.out.println("向users表中插入 " + count + " 条数据"); //输出插入操作的处理结果    
+	                
+	            conn.close();   //关闭数据库连接    
+	                
+	        } catch (SQLException e) {    
+	            System.out.println("插入数据失败" + e.getMessage());    
+	        }    
+	    }  
+	      
+	    public static boolean query(String guid) {    
+	        conn = getConnection(); //同样先要获取连接，即连接到数据库    
+	        try {    
+	            String sql = "select * from users where Id="+guid;     // 查询数据的sql语句    
+	            st = (Statement) conn.createStatement();    //创建用于执行静态sql语句的Statement对象，st属局部变量    
+	                
+	            ResultSet rs = st.executeQuery(sql);    //执行sql查询语句，返回查询数据的结果集    
+	            while (rs.next()) { // 判断是否还有下一个数据    
+	                return true ;  
+	            }  
+	            conn.close();   //关闭数据库连接    
+	                
+	        } catch (SQLException e) {    
+	            System.out.println("查询数据失败");    
+	        }  
+	        return false;    
+	    }    
+	        
+	      
+	    /* 更新符合要求的记录，并返回更新的记录数目*/    
+	    public static void update(userInformation v) {    
+	        conn = getConnection(); //同样先要获取连接，即连接到数据库    
+	        try {    
+	            String sql = "update user set name='wang' where Id="+v.getId();// 更新数据的sql语句    
+	                
+	            st = (Statement) conn.createStatement();    //创建用于执行静态sql语句的Statement对象，st属局部变量    
+	                
+	            int count = st.executeUpdate(sql);// 执行更新操作的sql语句，返回更新数据的个数    
+	                
+	            System.out.println("users表中更新 " + count + " 条数据");      //输出更新操作的处理结果    
+	                
+	            conn.close();   //关闭数据库连接    
+	                
+	        } catch (SQLException e) {    
+	            System.out.println("更新数据失败");    
+	        }    
+	    }
+	}
+
+}

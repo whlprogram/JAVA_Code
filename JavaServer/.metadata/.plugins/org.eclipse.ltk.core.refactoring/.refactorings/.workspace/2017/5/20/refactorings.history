@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="删除资源“TCPServer1”" deleteContents="false" description="删除资源“TCPServer1”" element1="/TCPServer1" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1494963172293"/>&#x0A;<refactoring comment="删除资源“TCPConnect”" deleteContents="false" description="删除资源“TCPConnect”" element1="/TCPConnect" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1494967179621"/>
+</session>
