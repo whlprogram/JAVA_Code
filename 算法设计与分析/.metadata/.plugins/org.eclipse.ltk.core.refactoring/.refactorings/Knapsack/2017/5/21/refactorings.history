@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;&apos; to &apos;knapsack.knapsack.min(...)&apos;&#x0D;&#x0A;－ 原始项目：“Knapsack”&#x0D;&#x0A;－ 目标元素：“knapsack.knapsack.min(...)”&#x0D;&#x0A;－ 原始元素：“knapsack.knapsack.max(...)”" description="复制方法" destination="/src&lt;knapsack{knapsack.java[knapsack~min~I~I" element1="/src&lt;knapsack{knapsack.java[knapsack~max~I~I" flags="589830" id="org.eclipse.jdt.ui.copy" members="1" policy="org.eclipse.jdt.ui.copyMembers" stamp="1495603800526" version="1.0"/>
+</session>
