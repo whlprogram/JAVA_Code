@@ -7,4 +7,5 @@
 <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.sun.jmx.trace.Trace"/>
+<fullyQualifiedTypeName name="knapsack.knapsack"/>
 </qualifiedTypeNameHistroy>
