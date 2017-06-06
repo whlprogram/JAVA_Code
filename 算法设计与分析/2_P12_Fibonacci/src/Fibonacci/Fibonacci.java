@@ -52,7 +52,7 @@ public class Fibonacci {//斐波拉契数列 课本P12 根据第三章动态规划改进
 		if(n == 0)	t = 0;
 		if(n == 1)	t = 1;
 		if(n > 1) 
-			t = Fibonacci1(n-1)+Fibonacci1(n-2);
+			t = Fibonacci3(n-1)+Fibonacci3(n-2);
 		return fibarr[n] = t; //取代下面两行
 //		fibarr[n] = t;
 //		return fibarr[n];
