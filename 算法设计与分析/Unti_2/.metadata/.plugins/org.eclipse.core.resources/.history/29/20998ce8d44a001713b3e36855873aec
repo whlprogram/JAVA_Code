@@ -1,0 +1,38 @@
+package binarySearch;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class BinarySearch {//二分搜索 递归实现
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner scan = new Scanner(System.in);  
+		System.out.print("二分搜索,输入要查找的数字并依次按大小输入数字：");
+		int n = scan.nextInt();
+		int list[] = new int[10];
+		Random random = new Random();
+		for (int i = 0; i < list.length; i++)
+			list[i] = random.nextInt(100);
+		for (int i = 0; i < list.length; i++)
+			System.out.print(list[i] + " ");
+		System.out.println();
+		binarySearch1(list,n,list.length-1);
+	}
+	public static int binarySearch1(int a[], int x, int n){
+		//在a[0] <= a[1] <= ... <= a[n-1]中搜索x （有序数组）
+		//找到x时返回其在数组中的位置，否则返回-1
+		int left = 0;
+		int right = n-1;
+		while(left <= right){
+			int middle = (left + right)/2;
+			if(x == a[middle])
+				return middle;
+			if(x > a[middle])
+				left = middle+1;
+			else
+				right = middle-1;	
+		}	
+		return -1;
+	}
+}

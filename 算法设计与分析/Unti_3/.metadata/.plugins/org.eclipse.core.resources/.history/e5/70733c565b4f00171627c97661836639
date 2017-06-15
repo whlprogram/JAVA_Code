@@ -1,0 +1,51 @@
+package matrixChain;
+
+public class MatrixChain {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int p[] = {30, 35, 15, 5, 10, 20, 25};
+		int n = 6;
+		int s1[][] = new int[n+1][n+1];
+		RecurMatrixChain(1, n, p, s1);//自底向上 递归 动态规划
+		t(1, n, s1);
+		System.out.println();
+	}
+	//输出计算最优计算次序,逗号分离 课本P48
+	public static void Traceback(int i, int j, int s[][]) {
+		if(i==j) return;
+		Traceback(i, s[i][j], s);
+		Traceback(s[i][j]+1, j, s);
+		System.out.println("(A" + i + "," + s[i][j] + ")*(A" + (s[i][j]+1) + "," + j + ")");
+	}
+	//输出计算最优计算次序,括号分离
+	public static void t(int i, int j, int s[][]) {
+		if (i == j)
+			System.out.print("A" + i);
+		else if (i + 1 == j)
+			System.out.print("(A" + i + "*" + "A" + j + ")");
+		else {	
+			System.out.print("(");
+			t(i, s[i][j], s);
+			System.out.print("*");
+			t(s[i][j]+1, j, s);
+			System.out.print(")");
+		}
+	}	
+	//一维数组P存储n个矩阵的行列值, 二维数组m存储最优值, 二维数组s记录最优断开位置
+	//自底向上 递归 动态规划
+	public static int RecurMatrixChain(int i, int j, int p[], int s[][]) {
+		if(i==j) return 0;
+		int u = RecurMatrixChain(i, i, p, s) + RecurMatrixChain(i+1, j, p, s) + p[i-1]*p[i]*p[j];
+		s[i][j] = i;
+		for(int k=i+1; k<j; k++){
+			int t = RecurMatrixChain(i, k, p, s) + RecurMatrixChain(k+1, j, p, s) + p[i-1]*p[k]*p[j];
+			if(t < u){
+				u = t;
+				s[i][j] = k;
+			}
+		}
+		return u;
+	}
+
+}

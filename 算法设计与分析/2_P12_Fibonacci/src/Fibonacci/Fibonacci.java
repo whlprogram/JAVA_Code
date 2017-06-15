@@ -29,12 +29,12 @@ public class Fibonacci {//斐波拉契数列 课本P12 根据第三章动态规划改进
 		  System.out.println("斐波拉契数列自顶向下的递归算法,得到数据：" + Fibonacci3(n2));
 	}
 	public static int Fibonacci1(int n){//普通递归算法
-		if(n == 0)	return 0;
+		if(n == 0)	return 1;
 		else if(n == 1)	return 1;
 		else return Fibonacci1(n-1)+Fibonacci1(n-2);
 	}
 	public static int Fibonacci2(int n){//自底向上的非递归算法
-		int f0 = 0, f1 = 1, f2 = 0;
+		int f0 = 1, f1 = 1, f2 = 0;
 		if(n == 0)	return f0;
 		if(n == 1)	return f1;
 		for(int i=2; i<=n; ++i){
@@ -49,7 +49,7 @@ public class Fibonacci {//斐波拉契数列 课本P12 根据第三章动态规划改进
 		int t = 0;
 		if(fibarr[n] != 0)
 			return fibarr[n];
-		if(n == 0)	t = 0;
+		if(n == 0)	t = 1;
 		if(n == 1)	t = 1;
 		if(n > 1) 
 			t = Fibonacci3(n-1)+Fibonacci3(n-2);
