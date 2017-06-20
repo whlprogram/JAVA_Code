@@ -1,0 +1,54 @@
+package test;
+
+import java.util.Scanner;
+
+public class test3 {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int c = scan.nextInt();
+		int w[] = new int[n+1];
+		w[0]=0;
+		for(int i=1; i<=n; i++)
+			w[i] = scan.nextInt();
+		int v[] = new int[n+1];
+		v[0]=0;
+		for(int j=1; j<=n; j++)
+			v[j] = scan.nextInt();
+		int m[][] = new int[n+1][c+1];
+		int x[] = new int[n+1];
+		knap(n, c, w, v, m);
+		t(n, c, w, m, x);
+		for(int i=1; i<x.length; i++)
+			System.out.print(x[i] + " ");
+	}
+	public static void knap(int n, int c, int w[], int v[], int m[][]){
+		int jmax = min(w[n]-1, c);
+		for(int j=0; j<=jmax; j++)
+			m[n][j] = 0;
+		for(int j=w[n]; j<=c; j++)
+			m[n][j] = v[n];
+		for(int i=n-1; i>0; i--){
+			jmax = min(w[i]-1, c);
+			for(int j=0; j<=jmax; j++)
+				m[i][j] = m[i+1][j];
+			for(int j=w[i]; j<=c; j++)
+				m[i][j] = max(m[i+1][j], m[i+1][j-w[i]]+v[i]);
+		}
+	}
+	public static void t(int n, int c, int w[], int m[][], int x[]){
+		for(int i=1; i<n; i++){
+			if(m[i][c] == m[i+1][c])
+				x[i] = 0;
+			else{
+				x[i] = 1;
+				c -= w[i]; 
+			}	
+		}
+		x[n] = (m[n][c]!=0) ? 1 : 0;
+	}
+	public static int max(int a, int b){return a>b ? a : b;}
+	public static int min(int a, int b){return a<b ? a : b;}
+}

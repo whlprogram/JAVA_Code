@@ -9,7 +9,7 @@ public class Fibonacci {//斐波拉契数列
 		Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         //普通递归算法
-        System.out.println(Fibonacci1(n));
+        //System.out.println(Fibonacci1(n));
         //自底向上的非递归动态规划算法
         System.out.println(Fibonacci2(n));
         //自顶向下的递归动态规划算法(备忘录方法)
