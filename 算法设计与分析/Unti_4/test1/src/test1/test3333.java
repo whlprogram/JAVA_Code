@@ -1,0 +1,64 @@
+package test1;
+
+import java.util.Scanner;
+
+public class test3333 {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner sc=new Scanner(System.in);
+	     int n=sc.nextInt();
+	     int t[]=new int [n+1];
+	     int s[]=new int [n+1];
+	     int f[]=new int [n+1];
+	     int a[]=new int [n+1];
+	     for(int i=0;i<=n;i++)
+	    	 t[i]=i;
+	     for(int i=1;i<=n;i++){
+	    	 s[i]=sc.nextInt();
+	    	 f[i]=sc.nextInt();
+	     }
+	     mp(t,s,f);
+	     tx(t,s,f);    
+	     for(int i=1;i<t.length;i++){
+	    	 if(t[i]<0){
+	    		 int temp=-t[i];
+	    		 a[temp]=1;
+	    	 }
+	     }
+	     for(int i=1; i<t.length; i++)
+				System.out.print(a[i] + " ");		
+			
+	     
+	}
+	public static void tx(int t[],int s[],int f[]){
+			t[1]=-t[1];
+			int j=1;
+			for(int i=2;i<s.length;i++){
+				if(s[i]>=f[j]){
+					t[i]=-t[i];
+					j=i;
+				}
+			}
+	}
+		
+	public static void mp(int t[],int s[],int f[]){
+		for(int i=1;i<f.length-1;i++)
+			for(int j=i+1;j<f.length;j++){
+					if(f[i]>f[j]){
+						int temp =f[i];
+						f[i]=f[j];
+						f[j]=temp;
+						
+						int temp1=s[i];
+						s[i]=s[j];
+						s[j]=temp1;
+						
+						int temp2=t[i];
+						t[i]=t[j];
+						t[j]=temp2;
+					}
+			}
+	}
+
+}

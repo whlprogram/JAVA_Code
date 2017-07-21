@@ -5,80 +5,65 @@ import java.util.Scanner;
 public class test1111 {
 
 	//输入：9 800 1030 900 1130 700 1100 1130 1400 1200 1330 1300 1530 1500 1600 1430 1600 1600 1800
-		//输出：1 0 0 0 1 0 1 0 1
+	//输出：1 0 0 0 1 0 1 0 1
 		
-		//输入： 11 1 4 3 5 0 6 5 7 3 8 5 9 6 10 8 11 8 12 2 13 12 14
-		//输出: 1 0 0 1 0 0 0 1 0 0 1
-		public static void main(String[] args) {
-			Scanner in = new Scanner(System.in);
-			int n = in.nextInt();
-			int s[] = new int[n];
-			int f[] = new int[n];
-			int a[] = new int[n];
-			int x[] = new int[n]; //记录原始下标
-			//注意输入，每次两个一组，分别为开始时间和结束时间
-			for(int i=0;i<n;i++){
-				s[i] = in.nextInt();
-				f[i] = in.nextInt();
-				x[i] = i;
-			}
-			
-			System.out.println("排序前：");
-			for(int i=0; i<s.length; i++)
-				System.out.print(s[i] + " ");
-			System.out.println();
-			for(int i=0; i<f.length; i++)
-				System.out.print(f[i] + " ");
-			System.out.println();
-			for(int i=0; i<x.length; i++)
-				System.out.print(x[i] + " ");
-			System.out.println();
-			//按结束时间进行冒泡排序
-			for(int i=0;i<f.length;i++){
-				for(int j=i+1;j<f.length;j++){
-					 if (f[i]>f[j]){   
-		                   int temp=f[i];   
-		                   f[i]=f[j];   
-		                   f[j]=temp;
-		                   
-		                   int temp1=s[i];   
-		                   s[i]=s[j];   
-		                   s[j]=temp1;
-		                   
-		                   int temp2 = x[i];
-		                   x[i] = x[j];
-		                   x[j] =temp2;
-					 }
-				}
-			}
-			System.out.println("排序后：");
-			for(int i=0; i<s.length; i++)
-				System.out.print(s[i] + " ");
-			System.out.println();
-			for(int i=0; i<f.length; i++)
-				System.out.print(f[i] + " ");
-			System.out.println();
-			for(int i=0; i<x.length; i++)
-				System.out.print(x[i] + " ");
-			System.out.println();
-			greedySelector(n, s, f, a);
-			for(int i=0;i<n;i++){
-				//System.out.print(a[x[i]]+" "); 
-				System.out.print(a[i]+" ");
+	//输入： 11 1 4 3 5 0 6 5 7 3 8 5 9 6 10 8 11 8 12 2 13 12 14
+	//输出: 1 0 0 1 0 0 0 1 0 0 1
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int s[] = new int[n+1];
+		int f[] = new int[n+1];
+		int a[] = new int[n+1];
+		for(int i=1; i<=n; i++){
+			s[i] = scan.nextInt();
+			f[i] = scan.nextInt();
+		}
+		for(int i=0; i<=n; i++)
+			a[i] = i;		
+		sort(s, f, a);
+		greedy(s, f, a);
+		int t[] = new int[n+1];
+		for(int i=1; i<=n; i++){
+			if(a[i] < 0){
+				int temp = -a[i];
+				t[temp] = 1;
 			}
 		}
-		public static void greedySelector(int n,int[] s,int[] f,int[] a){
-			a[0] = 1;  //第一个活动被选中
-			int j = 0; //j用来表示f数组的下标值
-			for(int i=1;i<n;i++){
-				//判断下一个活动的开始时间是否比当前活动的结束时间晚  
-				if(s[i]>=f[j]){
-					a[i] = 1;
-					j = i;
-				}else {
-					a[i] = 0;
+		for(int i=1; i<=n; i++)
+			System.out.print(t[i] + " ");
+	}
+	public static void greedy(int s[], int f[], int a[]){
+		a[1] = -a[1];
+		int j = 1;
+		for(int i=2; i<f.length; i++){
+			if(s[i] >= f[j]){
+				a[i] = -a[i];
+				j = i;
+			}
+		}
+		
+	}
+	public static void sort(int s[], int f[], int a[]){
+		for(int i=1; i<f.length-1; i++){
+			for(int j=i+1; j<f.length; j++){
+				if(f[i] > f[j]){
+					int temp = f[j];
+					f[j] = f[i];
+					f[i] = temp;
+					
+					int temp1 = s[j];
+					s[j] = s[i];
+					s[i] = temp1;
+					
+					int temp2 = a[j];
+					a[j] = a[i];
+					a[i] = temp2;
 				}
 			}
 		}
-
+	}
 }
+		
+
+

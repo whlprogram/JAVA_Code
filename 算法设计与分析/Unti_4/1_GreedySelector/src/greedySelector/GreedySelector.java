@@ -13,34 +13,14 @@ public class GreedySelector {
 		int s[] = new int[n+1];//起始时间
 		int f[] = new int[n+1];//终止时间
 		int a[] = new int[n+1];//记录活动安排
-		s[0] = 0; f[0] = 0; t[0] = 0;
+		s[0] = 0; f[0] = 0; 
 		for(int i=0; i<=n; i++)
 			t[i] = i;
 		for(int i=1; i<=n; i++){
 			s[i] = scan.nextInt();
 			f[i] = scan.nextInt();
 		}
-		System.out.println("排序前：");
-		for(int i=1; i<s.length; i++)
-			System.out.print(s[i] + " ");
-		System.out.println();
-		for(int i=1; i<f.length; i++)
-			System.out.print(f[i] + " ");
-		System.out.println();
-		for(int i=1; i<t.length; i++)
-			System.out.print(t[i] + " ");
-		System.out.println();
 		bubbleSort(s, f, t);
-		System.out.println("排序后：");
-		for(int i=1; i<s.length; i++)
-			System.out.print(s[i] + " ");
-		System.out.println();
-		for(int i=1; i<f.length; i++)
-			System.out.print(f[i] + " ");
-		System.out.println();
-		for(int i=1; i<t.length; i++)
-			System.out.print(t[i] + " ");
-		System.out.println();
 		greedySelector(s, f, t);
 		for(int i=1; i<t.length; i++){
 			if(t[i] < 0){
